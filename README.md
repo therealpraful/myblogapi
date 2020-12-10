@@ -1,3 +1,3 @@
 # myblogapi
 
-This is the api for my blog
+This is the REST API made using node.js and express.js .
