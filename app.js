@@ -43,13 +43,13 @@ app.use('/uploads' , express.static('uploads'));
 
 
 
-
+//for get all the posts
 app.get("/api/posts/", (req , res) => {
     // For get request we are sending response
     res.status(200).send(postsData.get())
 })
 
-
+//for geting data of single post using the id
 app.get("/api/posts/:post_id" , (req , res) => {
    const postId = req.params.post_id;
    const foundPost = postsData.getIndividualBlog(postId);
@@ -60,6 +60,7 @@ app.get("/api/posts/:post_id" , (req , res) => {
    }
 })
 
+//for posting data ....
 app.post("/api/posts/" , upload.single("post_image"), (req,res) => {
      
     // console.log(req.file);
@@ -75,6 +76,7 @@ app.post("/api/posts/" , upload.single("post_image"), (req,res) => {
     postsData.add(newPost);
     res.status(201).send("ok");
 })
+
 
 app.listen(PORT ,() => {
     console.log(`Listening on PORT ${PORT}`);
