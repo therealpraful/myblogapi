@@ -41,9 +41,7 @@ app.use((req,res,next) => {
  
 app.use('/uploads' , express.static('uploads'));
 
-app.use("/", (req, res)=>{
-    res.status(200).send("Hello World");
-})
+
 
 
 app.get("/api/posts/", (req , res) => {
